@@ -2,6 +2,7 @@ package com.example.Post_Management_System.controller;
 
 import com.example.Post_Management_System.modal.Post;
 import com.example.Post_Management_System.service.PostService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class PostController {
 
     @PostMapping("/create")
 
-    public String createPost(@RequestBody Post postDTO) {
+    public String createPost(@Valid @RequestBody Post postDTO) {
 
         System.out.println("Title = " + postDTO.getTitle());
         System.out.println("Content = " + postDTO.getContent());
